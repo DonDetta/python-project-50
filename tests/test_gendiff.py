@@ -30,3 +30,13 @@ def test_nested_yaml():
     expected = open(get_path('result_nested.txt')).read().strip()
     result = generate_diff(get_path('file1_nested.yml'), get_path('file2_nested.yml'))
     assert result == expected
+
+
+def test_plain():
+    expected = open(get_path('result_plain.txt')).read().strip()
+    result = generate_diff(
+        get_path('file1_nested.json'),
+        get_path('file2_nested.json'),
+        'plain',
+    )
+    assert result == expected
