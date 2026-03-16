@@ -7,4 +7,5 @@
 
 Утилита для сравнения двух конфигурационных файлов.
 
+[![asciicast](https://asciinema.org/a/cqLVfzMlNDobbRqR.svg)](https://asciinema.org/a/cqLVfzMlNDobbRqR)
 [![asciicast](https://asciinema.org/a/2qRquPOI0SblK0bD.svg)](https://asciinema.org/a/2qRquPOI0SblK0bD)
