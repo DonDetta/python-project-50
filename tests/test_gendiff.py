@@ -12,3 +12,9 @@ def test_flat_json():
     expected = open(get_path('result_flat_json.txt')).read()
     result = generate_diff(get_path('file1.json'), get_path('file2.json'))
     assert result == expected
+
+
+def test_flat_yaml():
+    expected = open(get_path('result_flat_json.txt')).read()
+    result = generate_diff(get_path('file1.yml'), get_path('file2.yml'))
+    assert result == expected
