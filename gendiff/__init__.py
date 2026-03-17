@@ -1,4 +1,5 @@
 from gendiff.diff import build_diff
+from gendiff.formatters.json import to_json
 from gendiff.formatters.plain import plain
 from gendiff.formatters.stylish import stylish
 from gendiff.parser import parse
@@ -6,6 +7,7 @@ from gendiff.parser import parse
 FORMATTERS = {
     'stylish': stylish,
     'plain': plain,
+    'json': to_json,
 }
 
 

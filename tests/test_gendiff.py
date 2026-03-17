@@ -40,3 +40,13 @@ def test_plain():
         'plain',
     )
     assert result == expected
+
+
+def test_json():
+    expected = open(get_path('result_json.txt')).read().strip()
+    result = generate_diff(
+        get_path('file1_nested.json'),
+        get_path('file2_nested.json'),
+        'json',
+    )
+    assert result == expected
