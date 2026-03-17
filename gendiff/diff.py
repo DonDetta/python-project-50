@@ -13,7 +13,9 @@ def build_diff(data1, data2):
                 'children': build_diff(data1[key], data2[key]),
             })
         elif data1[key] == data2[key]:
-            result.append({'type': 'unchanged', 'key': key, 'value': data1[key]})
+            result.append(
+                {'type': 'unchanged', 'key': key, 'value': data1[key]}
+            )
         else:
             result.append({
                 'type': 'changed',

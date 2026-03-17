@@ -20,7 +20,9 @@ def render_node(node, depth):
     key = node['key']
 
     if node['type'] == 'nested':
-        children = '\n'.join(render_node(child, depth + 1) for child in node['children'])
+        children = '\n'.join(
+            render_node(child, depth + 1) for child in node['children']
+        )
         return f'{indent}    {key}: {{\n{children}\n{indent}    }}'
 
     if node['type'] == 'unchanged':
@@ -33,8 +35,14 @@ def render_node(node, depth):
         return f'{sign_indent}- {key}: {format_value(node["value"], depth + 1)}'
 
     if node['type'] == 'changed':
-        old = f'{sign_indent}- {key}: {format_value(node["old_value"], depth + 1)}'
-        new = f'{sign_indent}+ {key}: {format_value(node["new_value"], depth + 1)}'
+        old = (
+            f'{sign_indent}- {key}: '
+            f'{format_value(node["old_value"], depth + 1)}'
+        )
+        new = (
+            f'{sign_indent}+ {key}: '
+            f'{format_value(node["new_value"], depth + 1)}'
+        )
         return f'{old}\n{new}'
 
 
